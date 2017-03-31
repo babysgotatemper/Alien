@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/favicon.png" type="image/png" sizes="16x16">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/libs.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!--
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">    
+    <meta property="og:image" content="http://.../images/share.jpg">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="http://.../»">
+-->
+
+
+    <!--mobile & IE9- support-->
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+    <![endif]-->
+    <!--mobile & IE9- support-->
+</head>
+
+<body>
+    <div class="preloader"></div>
+    <audio src="media/main-hover-sound.mp3"></audio>
+    <header>
+        <img src="img/header_logo.png" alt="">
+        <div class="social">
+            <div class="social__vk"></div>
+            <div class="social__fb"></div>
+        </div>
+        <a href="main" class="header__nav">главная</a>
+        <a href="film" class="header__nav">о фильме</a>
+        <a href="" class="header__nav">факты</a>
+        <a href="" class="header__nav">тест</a>
+        <a href="gallery" class="header__nav">галерея</a>
+        <a href="game" class="header__nav game">alien</a>
+        <a href="#" class="buyTicket">з 18 травня <span>купить билет</span></a>
+    </header>
+    <section class="main active">
+        <img src="img/bg-alien.jpg" class="alien" alt="">
+        <div class="main__text">
+            <img src="img/logo.png" alt="">
+            <!--            <p>чужий</p>
+            <p>заповіт</p>-->
+        </div>
+    </section>
+    <section class="film">
+        <p>
+            Рідлі Скотт повертається до всесвіту, який він створив у «Чужому», у новому фільмі «ЧУЖИЙ: ЗАПОВІТ» - другому розділі трилогії пріквелу, що почався з «ПРОМЕТЕЮ» і веде безпосередньо до оригінальної фантастики Скотта 1979 року. Вирушивши на віддалену планету на дальній стороні галактики, команда колоніального корабля "Заповіт" відкриває те, що здається їм недослідженим раєм, а насправді є темним, небезпечним світом, єдиним мешканцем якого є «синтетик» Девід (Майкл Фасбендер), врятований з приреченої експедиції "Прометей".
+        </p>
+        <iframe src="https://www.youtube.com/embed/eCI7Nx088_g" frameborder="0" allowfullscreen></iframe>
+    </section>
+    <section class="game">
+        <button class="game__exit">exit</button>
+        <video src="media/game.mp4" class="game__over" preload="auto">
+              <source src="movie.mp4" type="video/mp4">
+              <source src="movie.ogg" type="video/ogg">
+                Your browser does not support the video tag.
+        </video>
+        <div class="spotlight" id="spotlight"></div>
+    </section>
+    <section class="gallery">
+
+    </section>
+
+    <script src="js/libs.min.js"></script>
+    <script src="js/spotlight.js"></script>
+    <script src="js/common.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,365 @@
+$colorGray: #747578;
+$dark-gray: #212121;
+$red: 255;
+$green: 0;
+$blue: 0;
+body {
+    font-family: Helvetica;
+    color: #fff;
+    background-color: #000;
+}
+
+.preloader {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #000 url(http://special.test.umh.ua/12345/preload-black.gif) center no-repeat;
+}
+
+header {
+    opacity: 0;
+    position: fixed;
+    top: -300px;
+    left: 50%;
+    z-index: 888;
+    color: #fff;
+    width: 95%;
+    max-width: 1200px;
+    transform: translateX(-50%);
+    padding: 20px 5px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-bottom: 2px solid #fff;
+    a {
+        color: inherit;
+        text-transform: uppercase;
+        text-decoration: none;
+        &.header__nav {}
+    }
+}
+
+.social div {
+    display: inline-block;
+    width: 33px;
+    height: 33px;
+    border: 1px solid $colorGray;
+    margin: 0 5px;
+    &.social__vk {
+        background: url(../img/vk.png) center no-repeat;
+    }
+    &.social__fb {
+        background: url(../img/fb.png) center no-repeat;
+    }
+}
+
+a.game {
+    color: red;
+    font-weight: bold;
+    //    color: transparent;
+    //    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    //    letter-spacing: 2px;
+    //    font-size: 2em;
+    //    position: relative;
+    //    animation: horror-animation 5s infinite;
+}
+
+a.buyTicket {
+    text-align: center;
+    color: $colorGray;
+    position: relative;
+    bottom: -5px;
+    letter-spacing: 2px;
+    font-weight: 500;
+    span {
+        display: block;
+        border: 1px solid $colorGray;
+        padding: 5px;
+    }
+}
+
+section {
+    position: fixed;
+    z-index: 500;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    opacity: 0;
+    padding: 5% 2%;
+    transition: all .6s;
+    &.active {
+        opacity: 1;
+        z-index: 666;
+    }
+}
+
+
+/*
+
+main
+
+*/
+
+.main__text {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+    //    font-size: 125px;
+    //    text-transform: uppercase;
+    //    letter-spacing: 50px;
+    //    color: #fff;
+    //    p:last-child {
+    //        font-size: 28px;
+    //    }
+    img {
+        width: 100%;
+    }
+}
+
+.alien {
+    height: 60vh;
+    opacity: .3;
+    position: absolute;
+    z-index: inherit;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+}
+
+
+/*
+
+film
+
+*/
+
+section.film {
+    background: url(../img/bg-film.jpg) center no-repeat;
+    background-size: cover;
+    text-align: center;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    p {
+        font-size: 18px;
+        max-width: 1000px;
+        width: 90%;
+    }
+    iframe {
+        width: 562px;
+        height: 317px;
+        border: 1px solid #fff;
+    }
+}
+
+
+/*
+
+game
+
+*/
+
+section.game {
+    background: url(../img/game.jpeg) center no-repeat;
+    background-size: cover;
+    cursor: pointer;
+    &.active {
+        z-index: 900;
+    }
+    .game__exit {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        transform: rotateY(40deg);
+        transform: rotateZ(1deg);
+    
+        
+        background-color: black;
+        color: #f00;
+        font-weight: bold;
+        font-size: 20px;
+        text-transform: uppercase;
+        border: 1px solid rgba(255, 0, 0, 0.4);
+        box-shadow: 0 0 30px #f00;
+        padding: 5px;
+    }
+    .game__over {
+        display: none;
+        position: absolute;
+        z-index: 999;
+        min-width: 100vw;
+        min-height: 100vh;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.spotlight {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    background-image: radial-gradient(center, circle cover, rgba(0, 0, 0, 0.2) 5%, rgba(0, 0, 0, 1) 25%);
+}
+
+
+/*
+
+gallery
+
+*/
+
+section.gallery {
+    background: url(../img/bg-gallery.jpg) center no-repeat;
+    background-size: cover;
+}
+
+@keyframes horror-animation {
+    0% {
+        text-shadow: 0 0 10px rgba($red, $green, $blue, 0.1);
+        left: 1%;
+        top: 36%;
+    }
+    5% {
+        text-shadow: 0 0 10px rgba($red, $green, $blue, 0.2);
+        left: 0%;
+        top: 35%;
+    }
+    10% {
+        text-shadow: 0 0 10px rgba($red, $green, $blue, 0.3);
+        left: 49%;
+        top: 34%;
+    }
+    15% {
+        text-shadow: 0 0 10px rgba($red, $green, $blue, 0.4);
+        left: 0%;
+        top: 35%;
+    }
+    16% {
+        text-shadow: 0 0 5px $dark-gray;
+        left: 0%
+    }
+    17% {
+        text-shadow: 0 0 10px rgba($red, $green, $blue, 0.4);
+        left: 0%;
+    }
+    20% {
+        text-shadow: 0 0 10px rgba($red, $green, $blue, 0.5);
+        left: 49%
+    }
+    25% {
+        text-shadow: 0 0 10px rgba($red, $green, $blue, 0.6);
+        left: 49%
+    }
+    30% {
+        text-shadow: 0 0 10px rgba($red, $green, $blue, 0.7);
+        left: 0%
+    }
+    35% {
+        text-shadow: 0 0 5px rgba($red, $green, $blue, 0.8);
+        left: 0%
+    }
+    36% {
+        text-shadow: 0 0 5px $dark-gray;
+        left: 0%
+    }
+    37% {
+        text-shadow: 0 0 5px rgba($red, $green, $blue, 0.8);
+        left: 0%
+    }
+    40% {
+        text-shadow: 0 0 5px rgba($red, $green, $blue, 0.9);
+        left: 1%
+    }
+    45% {
+        text-shadow: 0 0 5px rgba($red, $green, $blue, 0.8);
+        left: 1%
+    }
+    50% {
+        text-shadow: 0 0 5px rgba($red, $green, $blue, 0.7);
+        left: 1%
+    }
+    55% {
+        text-shadow: 0 0 10px rgba($red, $green, $blue, 0.6);
+        left: 0%
+    }
+    56% {
+        text-shadow: 0 0 5px $dark-gray;
+        left: 0%
+    }
+    57% {
+        text-shadow: 0 0 10px rgba($red, $green, $blue, 0.6);
+        left: 2%
+    }
+    60% {
+        text-shadow: 0 0 10px rgba($red, $green, $blue, 0.5);
+        left: 0%
+    }
+    65% {
+        text-shadow: 0 0 10px rgba($red, $green, $blue, 0.4);
+        left: 0%
+    }
+    70% {
+        text-shadow: 0 0 10px rgba($red, $green, $blue, 0.3);
+        left: 49%
+    }
+    75% {
+        text-shadow: 0 0 10px rgba($red, $green, $blue, 0.2);
+        left: 49%
+    }
+    76% {
+        text-shadow: 0 0 5px $dark-gray;
+        left: 0%
+    }
+    77% {
+        text-shadow: 0 0 10px rgba($red, $green, $blue, 0.2);
+        left: 49%
+    }
+    80% {
+        text-shadow: 0 0 5px rgba($red, $green, $blue, 0.1);
+        left: 49%
+    }
+    85% {
+        text-shadow: 0 0 5px rgba($red, $green, $blue, 0.2);
+        left: 1%
+    }
+    86% {
+        text-shadow: 0 0 5px $dark-gray;
+        left: 0%
+    }
+    87% {
+        text-shadow: 0 0 5px rgba($red, $green, $blue, 0.2);
+        left: 1%
+    }
+    90% {
+        text-shadow: 0 0 5px rgba($red, $green, $blue, 0.3);
+        left: 1%
+    }
+    95% {
+        text-shadow: 0 0 10px rgba($red, $green, $blue, 0.4);
+        left: 1%
+    }
+    100% {
+        text-shadow: 0 0 10px rgba($red, $green, $blue, 0.5);
+        left: 0%
+    }
+}
+
+//@media (max-width: 1280px) {}
+//@media (max-width: 1024px) {}
+//@media (max-width: 768px) {}
+//@media (max-width: 640px) {}
+//@media (max-width: 480px) {}
