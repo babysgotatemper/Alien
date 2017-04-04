@@ -179,19 +179,20 @@ section.game {
     .game__exit {
         cursor: pointer;
         position: absolute;
-        top: 50%;
-        transform: rotateY(40deg);
-        transform: rotateZ(1deg);
+        top: 40%;
+        left: 10vw;
+//        transform: rotateY(40deg);
+//        transform: rotateZ(1deg);
     
         
-        background-color: black;
-        color: #f00;
-        font-weight: bold;
-        font-size: 20px;
-        text-transform: uppercase;
-        border: 1px solid rgba(255, 0, 0, 0.4);
-        box-shadow: 0 0 30px #f00;
-        padding: 5px;
+//        background-color: black;
+//        color: #f00;
+//        font-weight: bold;
+//        font-size: 20px;
+//        text-transform: uppercase;
+//        border: 1px solid rgba(255, 0, 0, 0.4);
+//        box-shadow: 0 0 30px #f00;
+//        padding: 5px;
     }
     .game__over {
         display: none;

@@ -47,7 +47,7 @@ var gameExitBtn = $('section.game').find('.game__exit'),
     gameOverVid = $('.game__over'),
     gameBtn = {};
 //nav game button click
-$('a.game').click(function(){
+/*$('a.game').click(function(){
     var gameTimer = document.createElement('h3'),
         gameTimerInner = gameTimer.innerHTML,
         gameTimerCount = document.createElement('span'),
@@ -62,7 +62,7 @@ $('a.game').click(function(){
 //        color: 'red'
 //    })
     
-})
+})*/
 
 
 //set game Btn Position coordinates
@@ -114,11 +114,11 @@ if (canTouch) {
 
 function onTouchStart(e) {
     var target = e.targetTouches[0];
-    elem.style.backgroundImage = '-webkit-radial-gradient(' + target.pageX + 'px ' + target.pageY + 'px, circle cover, rgba(0,0,0,0.2) 5%, rgba(0,0,0,1) 25%)';
+    elem.style.backgroundImage = '-webkit-radial-gradient(' + target.pageX + 'px ' + target.pageY + 'px, circle cover, rgba(0,0,0,0.2) 5%, rgba(0,0,0,1) 10%)';
 }
 
 function onMoseMove(e) {
-    elem.style.backgroundImage = '-webkit-radial-gradient(' + e.pageX + 'px ' + e.pageY + 'px, circle cover, rgba(0,0,0,0.2) 5%, rgba(0,0,0,1) 25%)';
+    elem.style.backgroundImage = '-webkit-radial-gradient(' + e.pageX + 'px ' + e.pageY + 'px, circle cover, rgba(0,0,0,0.2) 5%, rgba(0,0,0,1) 10%)';
 }
 
 /*

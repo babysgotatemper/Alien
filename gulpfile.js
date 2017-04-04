@@ -34,7 +34,8 @@ gulp.task('browser-sync', function () {
 
 gulp.task('scripts', function () {
     return gulp.src([
-		'app/libs/jquery/dist/jquery.min.js'
+		'app/libs/jquery/dist/jquery.min.js',
+        'app/libs/slick-carousel/slick/slick.js'
 		])
         .pipe(concat('libs.min.js'))
         .pipe(uglify())
@@ -42,7 +43,7 @@ gulp.task('scripts', function () {
 });
 
 gulp.task('css-libs', ['sass'], function () {
-    return gulp.src('app/css/libs.css')
+    return gulp.src('app/css/libs.scss')
         .pipe(cssnano())
         .pipe(rename({
             suffix: '.min'
