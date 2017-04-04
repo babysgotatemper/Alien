@@ -70,7 +70,7 @@ function gameBtnPositions() {
     gameBtn.xMin = gameExitBtnOffset.left;
     gameBtn.yMin = gameExitBtnOffset.top;
     gameBtn.width = gameExitBtn.width();
-    gameBtn.height= gameExitBtn.height();
+    gameBtn.height = gameExitBtn.height();
     gameBtn.xMax = gameBtn.xMin + gameBtn.width;
     gameBtn.yMax = gameBtn.yMin + gameBtn.height;
 }
@@ -80,19 +80,19 @@ gameBtnPositions();
 $('section.game').click(function (e) {
     var x = e.clientX,
         y = e.clientY;
-    if ( x < gameBtn.xMin + gameBtn.width && x > gameBtn.xMin && y < gameBtn.yMin + gameBtn.height && y > gameBtn.yMin) {
+    if (x < gameBtn.xMin + gameBtn.width && x > gameBtn.xMin && y < gameBtn.yMin + gameBtn.height && y > gameBtn.yMin) {
         gameClose();
     } else {
         gameOver();
     }
-// game over func
-    function gameOver() {        
+    // game over func
+    function gameOver() {
         gameOverVid.show();
         gameOverVid[0].play();
         gameOverVid.volume = 0;
         setTimeout(gameClose, 3000);
     }
-// exit game funk
+    // exit game funk
     function gameClose() {
         $('section.game').removeClass('active');
         $('section.main').addClass('active');
@@ -137,9 +137,23 @@ function alienAnim() {
 window resize
 
 */
-window.onresize = function(){
+window.onresize = function () {
     gameBtnPositions();
 }
+/*
+
+document ready
+
+*/
+$(document).ready(function () {
+    $('.slick').slick({
+        dots: true,
+        infinite: true,
+        speed: 500,
+        fade: true,
+        cssEase: 'linear'
+    });
+});
 /*
 
 window elements load
