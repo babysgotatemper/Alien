@@ -34,7 +34,7 @@ header {
     justify-content: space-between;
     align-items: flex-end;
     border-bottom: 2px solid #fff;
-    background: linear-gradient(top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+//    background: linear-gradient(top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
     a {
         color: inherit;
         text-transform: uppercase;
@@ -171,7 +171,7 @@ game
 */
 
 section.game {
-    background: url(../img/game.jpeg) center no-repeat;
+    background: url(../img/bg-game.jpg) center no-repeat;
     background-size: cover;
     cursor: pointer;
     &.active {
@@ -180,18 +180,12 @@ section.game {
     .game__exit {
         cursor: pointer;
         position: absolute;
-        top: 40%;
-        left: 10vw;
-        //        transform: rotateY(40deg);
-        //        transform: rotateZ(1deg);
-        //        background-color: black;
-        //        color: #f00;
-        //        font-weight: bold;
-        //        font-size: 20px;
-        //        text-transform: uppercase;
-        //        border: 1px solid rgba(255, 0, 0, 0.4);
-        //        box-shadow: 0 0 30px #f00;
-        //        padding: 5px;
+        width: 20vw;
+        height: 35vh;
+        top: 50%;
+        left: 15vw;
+        background-color: rgba(255, 255, 255, 0);
+        border: 0 none;
     }
     .game__over {
         display: none;
@@ -277,12 +271,13 @@ section.gallery {
     .slick-dots {
         bottom: 0;
         & li button {
+            border: 0 none;
             color: #fff;
         }
     }
 }
 
-@keyframes horror-animation {
+/*@keyframes horror-animation {
     0% {
         text-shadow: 0 0 10px rgba($red, $green, $blue, 0.1);
         left: 1%;
@@ -411,7 +406,7 @@ section.gallery {
         text-shadow: 0 0 10px rgba($red, $green, $blue, 0.5);
         left: 0%
     }
-}
+}*/
 
 //@media (max-width: 1280px) {}
 //@media (max-width: 1024px) {}
