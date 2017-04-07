@@ -156,7 +156,7 @@ gulp.task('clean', function () {
 gulp.task('img', function () {
     return gulp.src('app/img/**/*')
         .pipe(imagemin())
-        .pipe(gulp.dest('dist/imga'));
+        .pipe(gulp.dest('dist/img'));
 });
 //    return gulp.src('app/img/**/*')
 //        .pipe(cache(imagemin({

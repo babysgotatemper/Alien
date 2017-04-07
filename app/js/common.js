@@ -1,3 +1,16 @@
+//del
+$('.preloader').hide();
+$('.main__text').css({
+    width: 60 + '%',
+    opacity: .3
+})
+$('header').css({
+    top: 0,
+    opacity: 1
+})
+//del
+
+
 var audio = $("audio")[0],
     $headerLink = $('.header__nav');
 /*
@@ -14,7 +27,7 @@ $headerLink.each(function () {
     }
 })
 
-//nav click
+//nav click section activation
 $headerLink.click(function (e) {
     e.preventDefault();
     var link = $(this).attr("href");
@@ -23,6 +36,12 @@ $headerLink.click(function (e) {
     //    console.log(link);
 });
 //nav hover
+function alienAnim() {
+    $('.alien').animate({
+        height: 70 + 'vh',
+        opacity: 1
+    }, 2000)
+}
 $headerLink.mouseenter(function () {
     audio.play();
     alienAnim();
@@ -34,36 +53,63 @@ $headerLink.mouseleave(function () {
     $('.alien').animate({
         height: 60 + 'vh',
         opacity: .3
-    }, 200);
+    }, 500);
 
 });
+
 /*
 
 game
 
 */
+
 var gameExitBtn = $('section.game').find('.game__exit'),
     gameExitBtnOffset = gameExitBtn.offset(),
     gameOverVid = $('.game__over'),
-    gameBtn = {};
+    gameTime = document.createElement('span'),
+    timerSet = 10,
+    curTime = timerSet,
+    gameBtn = {},
+    timer;
+$('.game__warning').append(gameTime).find('span').html(curTime);
 //nav game button click
-/*$('a.game').click(function(){
-    var gameTimer = document.createElement('h3'),
-        gameTimerInner = gameTimer.innerHTML,
-        gameTimerCount = document.createElement('span'),
-        gameTimerCountInner = gameTimerCount.innerHTML;
+$('a.game').click(timerGo);
 
-    $('section.game').addClass('sdfs');
-//    $('.game-timer').css({
-//        position: 'fixed',
-//        top: 0,
-//        left: 10,
-//        'z-index': 999,
-//        color: 'red'
-//    })
-    
-})*/
 
+function timerFunc() {
+    if (!curTime) {
+        gameOver();
+    }
+    $('.game__warning span').html(curTime--);
+}
+function timerGo() {
+    timer = setInterval(timerFunc, 1000)
+}
+// game over func
+function gameOver() {
+    gameOverVid.show();
+    gameOverVid[0].play();
+    clearInterval(timer);
+    setTimeout(gameClose, 3000);
+}
+// exit game funk
+function gameClose() {
+    $('section.game').removeClass('active');
+    $('section.main').addClass('active');
+    gameOverVid.hide();
+    curTime = timerSet;
+}
+//game window click
+$('section.game').click(function (e) {
+    var x = e.clientX,
+        y = e.clientY;
+    if (x < gameBtn.xMin + gameBtn.width && x > gameBtn.xMin && y < gameBtn.yMin + gameBtn.height && y > gameBtn.yMin) {
+        gameClose();
+        clearInterval(timer);
+    } else {
+        gameOver();
+    }
+})
 
 //set game Btn Position coordinates
 function gameBtnPositions() {
@@ -75,30 +121,6 @@ function gameBtnPositions() {
     gameBtn.yMax = gameBtn.yMin + gameBtn.height;
 }
 gameBtnPositions();
-
-//game window click
-$('section.game').click(function (e) {
-    var x = e.clientX,
-        y = e.clientY;
-    if (x < gameBtn.xMin + gameBtn.width && x > gameBtn.xMin && y < gameBtn.yMin + gameBtn.height && y > gameBtn.yMin) {
-        gameClose();
-    } else {
-        gameOver();
-    }
-    // game over func
-    function gameOver() {
-        gameOverVid.show();
-        gameOverVid[0].play();
-        gameOverVid.volume = 0;
-        setTimeout(gameClose, 3000);
-    }
-    // exit game funk
-    function gameClose() {
-        $('section.game').removeClass('active');
-        $('section.main').addClass('active');
-        gameOverVid.hide();
-    }
-})
 
 
 //spotlight init
@@ -126,12 +148,7 @@ function onMoseMove(e) {
 
 
 */
-function alienAnim() {
-    $('.alien').animate({
-        height: 70 + 'vh',
-        opacity: 1
-    }, 500)
-}
+
 /*
 
 window resize
@@ -142,7 +159,10 @@ window.onresize = function () {
 }
 /*
 
+
 document ready
+
+
 
 */
 $(document).ready(function () {
@@ -150,21 +170,24 @@ $(document).ready(function () {
 });
 /*
 
+
 window elements load
 
-*/
-window.onload = function () {
-    $('.preloader').fadeOut(500);
-    headerAnim();
-    $('.main__text').animate({
-        width: 60 + '%',
-        opacity: .3
-    }, 6000)
 
-    function headerAnim() {
-        $('header').animate({
-            top: 0,
-            opacity: 1
-        }, 1000)
-    }
-};
+*/
+
+//window.onload = function () {
+//    $('.preloader').fadeOut(500);
+//    headerAnim();
+//    $('.main__text').animate({
+//        width: 60 + '%',
+//        opacity: .3
+//    }, 6000)
+//
+//    function headerAnim() {
+//        $('header').animate({
+//            top: 0,
+//            opacity: 1
+//        }, 1000)
+//    }
+//};
