@@ -27,6 +27,7 @@ header {
     z-index: 888;
     color: #fff;
     width: 100%;
+    box-sizing: border-box;
 //    width: 95%;
 //    max-width: 1200px;
 //    transform: translateX(-50%);
@@ -220,16 +221,40 @@ section.game {
 
 /*
 
-gallery
+facts
 
 */
-
-section.gallery {
-    //    background: url(../img/bg-gallery.jpg) center no-repeat;
-    //    background-size: cover;
+.slide-fact{
+    position: absolute;
+    font-weight: 300;
+    width: 410px;
+    font-size: 18px;
+//    line-height: 1.5;
+    letter-spacing: 1px;
+    box-sizing: border-box;
+    &._big{
+        width: 100%;
+        padding: 0 150px;
+    }
+    &._left{
+        left: 150px;
+    }
+    &._right{
+        right: 150px;
+    }
+    &._bottom{
+        bottom: 150px;
+    }
+    &._top{
+        top: 150px;
+    }
 }
 
-.gallery__slider {
+
+
+//
+//slick slider
+.slick {
     position: absolute;
     top: 0;
     left: 0;
@@ -241,8 +266,9 @@ section.gallery {
         width: inherit;
         height: inherit;
         overflow: hidden;
+        position: relative;
         img {
-            position: relative;
+            position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);

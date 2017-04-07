@@ -1,3 +1,38 @@
+/*
+
+
+document ready
+
+
+*/
+$(document).ready(function () {
+    $('.slick').slick({
+        fade: true
+    });
+});
+/*
+
+
+window elements load
+
+
+*/
+
+//window.onload = function () {
+//    $('.preloader').fadeOut(500);
+//    headerAnim();
+//    $('.main__text').animate({
+//        width: 60 + '%',
+//        opacity: .3
+//    }, 6000)
+//
+//    function headerAnim() {
+//        $('header').animate({
+//            top: 0,
+//            opacity: 1
+//        }, 1000)
+//    }
+//};
 //del
 $('.preloader').hide();
 $('.main__text').css({
@@ -9,6 +44,17 @@ $('header').css({
     opacity: 1
 })
 //del
+/*
+
+window resize
+
+*/
+window.onresize = function () {
+    gameBtnPositions();
+}
+
+
+
 
 
 var audio = $("audio")[0],
@@ -148,46 +194,3 @@ function onMoseMove(e) {
 
 
 */
-
-/*
-
-window resize
-
-*/
-window.onresize = function () {
-    gameBtnPositions();
-}
-/*
-
-
-document ready
-
-
-
-*/
-$(document).ready(function () {
-    $('.slick').slick();
-});
-/*
-
-
-window elements load
-
-
-*/
-
-//window.onload = function () {
-//    $('.preloader').fadeOut(500);
-//    headerAnim();
-//    $('.main__text').animate({
-//        width: 60 + '%',
-//        opacity: .3
-//    }, 6000)
-//
-//    function headerAnim() {
-//        $('header').animate({
-//            top: 0,
-//            opacity: 1
-//        }, 1000)
-//    }
-//};
